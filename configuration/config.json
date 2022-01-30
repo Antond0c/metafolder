@@ -1,0 +1,16 @@
+{
+  "clean_cache_at_startup": false,
+  "cache_file_name": "cache.json",
+  "cache_prettyprint": true,
+  "startup_script": "",
+  "autosave": false,
+  "print_configs_at_startup": false,
+  "print_caches_path": true,
+  "shortcuts": {
+    "help": ["h"],
+    "map": ["m"],
+    "list": ["l"],
+    "clean": ["c"],
+    "shortcuts": ["shorts", "shorthands"]
+  }
+}
