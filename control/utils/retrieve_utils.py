@@ -37,9 +37,7 @@ def search_in_folder(root_path, file_name):
 
 
 def retrieve_cmd_options(config_data, command):
-    """
-    returns all command's names
-    """
+    """returns all command's names"""
     if command in config_data["shortcuts"]:
         options = config_data["shortcuts"][command].copy()
         options.append(command)

@@ -2,9 +2,10 @@ import sys
 from collections import Mapping
 
 from utils.ArgsChecker import ArgsChecker
-from utils.retrieve_utils import search_in_folder, find_metafolder_path, find_metafolder_path_simpler
 from utils.json_utils import read_json
+from utils.methods import create_archives
 from utils.objects_utils import Container, Data
+from utils.retrieve_utils import search_in_folder, find_metafolder_path_simpler
 
 
 def retrieve(map, key):
@@ -32,9 +33,9 @@ class MetafolderController:
 
     def __init__(self):
         script_name = sys.argv[0]
-        self.container = Container(find_metafolder_path_simpler(script_name))
         # self.container = Container(find_metafolder_path(script_name, "metafolder"))
-        # todo: create archives structure
+        self.container = Container(find_metafolder_path_simpler(script_name))
+        create_archives(self.container)
 
         self.config_data = read_json(search_in_folder(self.container.metafolder, "config.json"))
         self.cache_data = read_json(search_in_folder(self.container.metafolder, self.config_data["cache_file_name"]))

@@ -1,3 +1,5 @@
+import os
+
 from .retrieve_utils import search_in_folder
 
 
@@ -36,3 +38,15 @@ def find_in_container(container, exec_name):
     """
     """
     return search_in_folder(container, exec_name)
+
+def create_archives(container):
+    if not os.path.exists(container.file):
+        os.mkdir(container.file)
+    if not os.path.exists(container.dir):
+        os.mkdir(container.dir)
+    if not os.path.exists(container.zip):
+        os.mkdir(container.zip)
+    if not os.path.exists(container.cache):
+        os.mkdir(container.cache)
+    if not os.path.exists(container.execution):
+        os.mkdir(container.execution)

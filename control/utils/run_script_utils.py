@@ -2,19 +2,11 @@ from .methods import read_script_lines, split_command_line_arguments, find_in_co
 
 
 def run_script_lines(controller, lines):
-    """
-    executes each line of the passed lines
-    :param lines: n lines, each line contains a command
-    """
-    # fixme: too many "if lines"
+    """runs each command from lines"""
     if lines:
-        # print("- - - " * 10)
-        # print()
         for line in lines:
             print(">", line)
             controller.handle_command_line(split_command_line_arguments(line))
-            # print("- - - " * 10)
-        # print()
 
 
 def run_script_if_present(controller, script_path):
@@ -23,8 +15,9 @@ def run_script_if_present(controller, script_path):
 
 
 def check_startup_script(controller):
-    # startup script
+    """if startup script is configured executes it"""
     startup_script_path = find_in_container(controller.container.execution,
                                             controller.retrieve_config("startup_script"))
-    if startup_script_path: print("- - -" * 4, "startup", "- - --" * 4)
-    run_script_if_present(controller, startup_script_path)
+    if startup_script_path:
+        print("- - -" * 4, "startup", "- - --" * 4)
+        run_script_if_present(controller, startup_script_path)

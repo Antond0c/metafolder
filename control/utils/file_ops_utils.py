@@ -33,7 +33,7 @@ def get_file(controller, file_path):
     file_path = normal_path(file_path)
 
     if os.path.isdir(file_path):
-        remove_current_dir(controller.data.cache, controller.container.dir)
+        remove_current_dir(controller)
         controller.data.cache["current_dir_name"] = normal_path(file_path).name
         current_dir_path = os.path.join(controller.container.dir, controller.data.cache["current_dir_name"])
         safe_copy_dir(file_path, current_dir_path)
@@ -46,7 +46,7 @@ def get_file(controller, file_path):
         file_path = check
 
     if os.path.isfile(file_path):
-        remove_current_file(controller.data.cache, controller.container.file)
+        remove_current_file(controller)
         controller.data.cache["current_file_name"] = normal_path(file_path).name
         current_file_path = os.path.join(controller.container.file, controller.data.cache["current_file_name"])
         shutil.copy(file_path, current_file_path)

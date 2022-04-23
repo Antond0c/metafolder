@@ -24,12 +24,14 @@ def remove_current_dir(cache_data, DIR_CONTAINER_PATH=None):
         autosave_cache()
 
 
-def remove_file_alias(cache_data, alias):
-    # fixme: extract method
-    if alias in cache_data["file_map"]:
-        del cache_data["file_map"][alias]
+def remove_file_alias(controller, alias):
+    remove(controller.data.cache, controller.container.file, alias)
 
 
-def remove_dir_alias(cache_data, alias):
-    if alias in cache_data["dir_map"]:
-        del cache_data["dir_map"][alias]
+def remove_dir_alias(controller, alias):
+    remove(controller.data.cache, controller.container.dir, alias)
+
+
+def remove(data, container, alias):
+    if alias in data[container]:
+        del data[container][alias]
