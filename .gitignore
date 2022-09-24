@@ -131,9 +131,9 @@ dmypy.json
 .pyre/
 
 # custom
-/archive/cache_container/
-/archive/dir_container/
-/archive/file_container/
-/archive/zip/
-/archive/exec_flows/
+#/archive/cache_container/
+#/archive/dir_container/
+#/archive/file_container/
+#/archive/zip/
+#/archive/exec_flows/
 /planning/
