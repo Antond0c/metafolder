@@ -1,0 +1,1 @@
+python3 "$(pwd)/__init__.py" $@
