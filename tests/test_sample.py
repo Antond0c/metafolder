@@ -19,4 +19,4 @@ def test_contains_cmd2(capsys):
 
     captured = capsys.readouterr().out
 
-    assert "clean foslders" in captured
+    assert "clean folders" in captured
