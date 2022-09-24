@@ -29,11 +29,10 @@ class MetafolderController:
     config_sample = "{\"clean_cache_at_startup\":false,\"cache_file_name\":\"cache.json\",\"cache_prettyprint\":true,\"startup_script\":\"\",\"autosave\":false,\"print_configs_at_startup\":false,\"print_caches_path\":true,\"shortcuts\":{\"help\":[\"h\"],\"map\":[\"m\"],\"list\":[\"l\"],\"clean\":[\"c\"],\"shortcuts\":[\"shorts\",\"shorthands\"]}}"
     cache_sample = "{\"current_dir_name\":\"\",\"current_file_name\":\"\",\"dir_map\":{\"prova\":\"\"},\"executions\":{\"ciao\":\"\"},\"file_map\":{\"zipfile\":\"\"}}"
 
-    def __init__(self):
+    def __init__(self, script_name):
         self.checker = None
 
         # create or check folder structure
-        script_name = sys.argv[0]
         self.container = Container(find_metafolder_path(script_name))
         create_archives(self.container)
 

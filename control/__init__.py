@@ -27,7 +27,7 @@ else executes one command only
 
 def main(sysargs):
     # create the controller
-    metafolder_controller = MetafolderController()
+    metafolder_controller = MetafolderController(sysargs[0])
 
     # create new ArgsChecker which will contain all commands
     checker = ArgsChecker()
