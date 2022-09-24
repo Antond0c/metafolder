@@ -1,29 +1,27 @@
 # metafolder
-Tool for handling files and folders
+Tool for handling files, folders, zips and custom actions
 
 ### Quick Tutorial:
+`help` - prints all available commands  
+
+`get file.txt as myFile` - saves file path with name  
+`put myFile in /usr/folder` - puts file with name in path
+
+`get /usr/folder1 as myFolder1` - saves folder path with name  
+`get /usr/folder2 as myFolder2`  
+`put myFile in myFolder1`  
+`put myFile in myFolder2`  
 
 ### config.json
-has a config file
-which can be positioned in every subdir of metafolder
-and can
+Contains configuration properties which changes program's default behaviour
 
 ### cache.json
-has a cache file
-with a custom name
+Contains all current files, dirs and zips mapping
 
-
-### metafolder.bat (windows) 
-use this file to run the program.  
-you can register this path to system environments.  
-`../metafolder/control/metafolder.bat`
-
-### metafolder (linux)
-use this file to run the program.  
-you can register this path to ...  
-`register to file ..`
-
+### entrypoints to run the program:
+* `bin/metafolder.bat` (windows)
+* `bin/metafolder.sh` (linux)
 
 ### features list:
-- ...
-- shorhands support for commands: help, list, map, get, put
+- paths' saving with aliases
+- shorthands support for commands: help, list, map, get, put
