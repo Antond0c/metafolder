@@ -1,1 +1,1 @@
-python3 "$(pwd)/__init__.py" $@
+python3 "$(pwd)/../control/__init__.py" $@
